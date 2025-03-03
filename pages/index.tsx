@@ -20,7 +20,7 @@ export default function Home() {
                 {buttons.flat().map((label, index) => (
                     <button
                         key={index}
-                        className="w-full h-24 bg-red-600 rounded-full text-white font-bold shadow-md hover:bg-red-700 focus:ring-4 focus:ring-red-400 m-2"
+                        className="w-full h-24 bg-gradient-to-r from-red-500 to-red-700 rounded-full text-white font-bold shadow-lg hover:from-red-600 hover:to-red-800 focus:ring-4 focus:ring-red-400 m-2 transition duration-300 border-2 border-transparent hover:border-red-500"
                         onClick={() => playSound(label)}
                     >
                         {label}
