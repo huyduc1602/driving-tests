@@ -1,4 +1,3 @@
-
 import '../styles/globals.css'
 
 const buttons = [
@@ -17,11 +16,11 @@ export default function Home() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
-            <div className="grid grid-cols-6 gap-4 bg-blue-700 p-6 rounded-lg shadow-lg">
+            <div className="container mx-auto p-4 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {buttons.flat().map((label, index) => (
                     <button
                         key={index}
-                        className="w-24 h-24 bg-red-600 rounded-full text-white font-bold shadow-md hover:bg-red-700 focus:ring-4 focus:ring-red-400"
+                        className="w-full h-24 bg-red-600 rounded-full text-white font-bold shadow-md hover:bg-red-700 focus:ring-4 focus:ring-red-400 m-2"
                         onClick={() => playSound(label)}
                     >
                         {label}
