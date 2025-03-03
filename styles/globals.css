@@ -1,4 +1,1 @@
-/* filepath: /Users/hoanghuyduc/Project/Personal/driving-tests/styles/globals.css */
-@import "tailwindcss/preflight";
-@tailwind utilities;
-@tailwind utilities;
+@import "tailwindcss";
