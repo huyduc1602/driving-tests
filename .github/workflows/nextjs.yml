@@ -47,7 +47,6 @@ jobs:
           else
             echo "Unable to determine package manager"
             exit 1
-          fi
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -73,6 +72,16 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Create fallback files
+        run: |
+          mkdir -p public/static/images
+          mkdir -p public/static/audio
+          mkdir -p public/static/video
+          mkdir -p public/static/fonts
+          echo "Fallback Image" > public/static/images/fallback.png
+          echo "Fallback Audio" > public/static/audio/fallback.mp3
+          echo "Fallback Video" > public/static/video/fallback.mp4
+          echo "Fallback Font" > public/static/fonts/fallback.woff2
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
